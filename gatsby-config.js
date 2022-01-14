@@ -36,9 +36,24 @@ module.exports = {
         name: "images",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "content",
+        path: `${__dirname}/src/content`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
+      }
+    },
     `gatsby-plugin-image`,
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-transformer-json",
+      options: {
+        typeName: ({ node }) => `${node.relativeDirectory}Json`,
+      },
+    },
+
     {
       resolve: "gatsby-transformer-remark",
       options: {
