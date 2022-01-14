@@ -13,6 +13,20 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "team members"
+    label: "Team members"
+    label_singular: "Team member"
+    folder: "src/content/team_members"
+    create: true
+    extension: "json"
+    identifier_field: "name"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Job title", name: "title", widget: "string" }
+      - { label: "E-mail", name: "email", widget: "string" }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "Twitter", name: "twitter", widget: "string", required: false }
+      - { label: "Picture", name: "picture", widget: "image" }
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
